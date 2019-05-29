@@ -1,0 +1,25 @@
+
+.introduction{
+    width: 100%;
+    height:300px;
+    background: url(/img/bz.png);
+    margin-bottom: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.introduction h1{
+    margin-bottom: 40px;
+}
+.introduction .address{
+    position: absolute; 
+    bottom:0;
+}
+.flex-box{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.card{
+    margin: 20px;
+}
