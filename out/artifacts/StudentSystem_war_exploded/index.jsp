@@ -5,7 +5,8 @@
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
   <!-- Required meta tags -->
@@ -44,7 +45,6 @@
     </ul>
   </div>
 
-
 </nav>
 <div class="introduction">
   <h1>
@@ -55,28 +55,17 @@
   <p class="address">地址地址地址</p>
 </div>
 <div class="flex-box">
+<c:forEach var="departments" items="${departments}">
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="img/bz.png" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">信息科学与工程学院</h5>
-      <p class="card-text">一个弱鸡云集的学院，有兴趣的话点进来看看吧！
-      </p>
-      <a href="#" class="btn btn-primary">进入学院</a>
+      <h5 class="card-title">${departments.department_name}</h5>
+      <p class="card-text">${departments.department_dec}</p>
+      <a href="${pageContext.request.contextPath}/department?department_no=${departments.department_no}" class="btn btn-primary">进入学院</a>
     </div>
   </div>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="img/bz.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">设计与艺术学院</h5>
-      <p class="card-text">一个大佬与孤狼云集的学院，有兴趣的话点进来看看吧！
-      </p>
-      <a href="/department.jsp?name=1" class="btn btn-primary">进入学院</a>
-    </div>
-  </div>
+</c:forEach>
 </div>
-
-
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

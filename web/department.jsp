@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -45,36 +46,38 @@
       <p class="address">地址地址地址</p>
     </div>
     <div class="flex-box" id ="teachers">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/img/bz.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">白萌萌</h5>
-              <p class="card-text">一个负责教授卖萌的老师！</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">研究方向：卖萌</li>
-              <li class="list-group-item">邮箱：baimengmeng@hnu.edu.cn</li>
-              <li class="list-group-item">地址: 信息科学与工程学院555室</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">了解更多</a>
-            </div>
+        <c:forEach var="teachers" items="${teachers}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/img/bz.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">${teachers.teacher_name}</h5>
+                  <p class="card-text">${teachers.teacher_dec}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">研究方向：${teachers.research_fields}</li>
+                  <li class="list-group-item">邮箱：${teachers.email}</li>
+                  <li class="list-group-item">地址: ${teachers.addr}</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">了解更多</a>
+                </div>
           </div>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/img/bz.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">梨花花</h5>
-              <p class="card-text">一个负责教授卖萌的老师！</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">研究方向：卖萌</li>
-              <li class="list-group-item">邮箱：lihuahua@hnu.edu.cn</li>
-              <li class="list-group-item">地址: 信息科学与工程学院556室</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">了解更多</a>
-            </div>
-          </div>
+        </c:forEach>
+          <%--<div class="card" style="width: 18rem;">--%>
+            <%--<img class="card-img-top" src="/img/bz.png" alt="Card image cap">--%>
+            <%--<div class="card-body">--%>
+              <%--<h5 class="card-title">梨花花</h5>--%>
+              <%--<p class="card-text">一个负责教授卖萌的老师！</p>--%>
+            <%--</div>--%>
+            <%--<ul class="list-group list-group-flush">--%>
+              <%--<li class="list-group-item">研究方向：卖萌</li>--%>
+              <%--<li class="list-group-item">邮箱：lihuahua@hnu.edu.cn</li>--%>
+              <%--<li class="list-group-item">地址: 信息科学与工程学院556室</li>--%>
+            <%--</ul>--%>
+            <%--<div class="card-body">--%>
+              <%--<a href="#" class="card-link">了解更多</a>--%>
+            <%--</div>--%>
+          <%--</div>--%>
     </div>
     <div id = "professions">
         <div class="card">
