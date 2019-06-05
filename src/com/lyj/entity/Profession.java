@@ -8,6 +8,7 @@ public class Profession {
     private String profession_no;
     private String department_no;
     private String professions_name;
+    private String learn_fields;
     private String degree;
     private Integer need_credit;
 
@@ -33,6 +34,14 @@ public class Profession {
 
     public void setProfessions_name(String professions_name) {
         this.professions_name = professions_name;
+    }
+
+    public String getLearn_fields() {
+        return learn_fields;
+    }
+
+    public void setLearn_fields(String learn_fields) {
+        this.learn_fields = learn_fields;
     }
 
     public String getDegree() {

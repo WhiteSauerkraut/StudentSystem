@@ -27,6 +27,14 @@ public class TeacherDAO {
     }
 
     /**
+     * 查询指定教师号的老师信息
+     */
+    public List<Teacher> queryByTeacherNo(Object...params)
+    {
+        return dbHandle.executeQuery(SqlConstants.QUERY_TABLE_TEACHER_BY_STUDENT_NO, Teacher.class, params);
+    }
+
+    /**
      * 查询全部老师信息
      */
     public List<Teacher> queryAll(Object...params)

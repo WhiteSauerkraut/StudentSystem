@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="/img/niurou.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            煳腩大学XXX学院
+            煳腩大学${department.department_name}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,67 +39,44 @@
     </nav>
     <div class="introduction">
       <h1>
-        煳腩大学xxxxx学院欢迎您！
+        煳腩大学${department.department_name}欢迎您！
       </h1>
       <p>关于我们</p>
-      <p>一句话简介</p>
-      <p class="address">地址地址地址</p>
+      <p>${department.department_dec}</p>
+      <p class="address">${department.department_addr}</p>
     </div>
     <div class="flex-box" id ="teachers">
-        <c:forEach var="teachers" items="${teachers}">
+        <c:forEach var="teacher" items="${teachers}">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="/img/bz.png" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">${teachers.teacher_name}</h5>
-                  <p class="card-text">${teachers.teacher_dec}</p>
+                  <h5 class="card-title">${teacher.teacher_name}</h5>
+                  <p class="card-text">${teacher.teacher_dec}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">研究方向：${teachers.research_fields}</li>
-                  <li class="list-group-item">邮箱：${teachers.email}</li>
-                  <li class="list-group-item">地址: ${teachers.addr}</li>
+                  <li class="list-group-item">研究方向：${teacher.research_fields}</li>
+                  <li class="list-group-item">邮箱：${teacher.email}</li>
+                  <li class="list-group-item">地址: ${teacher.addr}</li>
                 </ul>
                 <div class="card-body">
-                  <a href="#" class="card-link">了解更多</a>
+                  <a href="${pageContext.request.contextPath}/teaching_course?teacher_no=${teacher.teacher_no}&department_name=${department.department_name}" class="card-link">了解更多</a>
                 </div>
           </div>
         </c:forEach>
-          <%--<div class="card" style="width: 18rem;">--%>
-            <%--<img class="card-img-top" src="/img/bz.png" alt="Card image cap">--%>
-            <%--<div class="card-body">--%>
-              <%--<h5 class="card-title">梨花花</h5>--%>
-              <%--<p class="card-text">一个负责教授卖萌的老师！</p>--%>
-            <%--</div>--%>
-            <%--<ul class="list-group list-group-flush">--%>
-              <%--<li class="list-group-item">研究方向：卖萌</li>--%>
-              <%--<li class="list-group-item">邮箱：lihuahua@hnu.edu.cn</li>--%>
-              <%--<li class="list-group-item">地址: 信息科学与工程学院556室</li>--%>
-            <%--</ul>--%>
-            <%--<div class="card-body">--%>
-              <%--<a href="#" class="card-link">了解更多</a>--%>
-            <%--</div>--%>
-          <%--</div>--%>
     </div>
-    <div id = "professions">
-        <div class="card">
-            <h5 class="card-header">计算机科学与技术</h5>
-            <div class="card-body">
-              <h5 class="card-title">学习方向</h5>
-              <p class="card-text">计算机基础研究与相关应用</p>
-              <a href="#" class="btn btn-primary">专业页面</a>
-            </div>
-          </div>
-          <div class="card">
-            <h5 class="card-header">计算机科学与技术</h5>
-            <div class="card-body">
-              <h5 class="card-title">学习方向</h5>
-              <p class="card-text">计算机基础研究与相关应用</p>
-              <a href="#" class="btn btn-primary">专业页面</a>
-            </div>
-          </div>
-    </div>
-    
-	
 
+    <div id = "professions">
+        <c:forEach var="profession" items="${professions}">
+            <div class="card">
+                <h5 class="card-header">${profession.professions_name}</h5>
+                <div class="card-body">
+                  <h5 class="card-title">学习方向</h5>
+                  <p class="card-text">${profession.learn_fields}</p>
+                  <a href="#" class="btn btn-primary">专业页面</a>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -25,4 +25,12 @@ public class DepartmentDAO {
     {
         return dbHandle.executeQuery(SqlConstants.QUERY_TABLE_DEPARTMENT_ALL, Department.class, params);
     }
+
+    /**
+     * 查询指定院系信息
+     */
+    public List<Department> queryByDepartmentNo(Object...params)
+    {
+        return dbHandle.executeQuery(SqlConstants.QUERY_TABLE_DEPARTMENT_BY_DEPARTMENT_NO, Department.class, params);
+    }
 }

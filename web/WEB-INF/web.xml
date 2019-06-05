@@ -20,4 +20,13 @@
         <servlet-name>DepartmentServlet</servlet-name>
         <url-pattern>/department</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TeachingCourseServlet</servlet-name>
+        <servlet-class>com.lyj.service.TeachingCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeachingCourseServlet</servlet-name>
+        <url-pattern>/teaching_course</url-pattern>
+    </servlet-mapping>
 </web-app>

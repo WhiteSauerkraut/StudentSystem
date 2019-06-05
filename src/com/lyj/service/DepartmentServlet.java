@@ -1,7 +1,11 @@
 package com.lyj.service;
 
 import com.lyj.dao.DBHandle;
+import com.lyj.dao.DepartmentDAO;
+import com.lyj.dao.ProfessionDAO;
 import com.lyj.dao.TeacherDAO;
+import com.lyj.entity.Department;
+import com.lyj.entity.Profession;
 import com.lyj.entity.Teacher;
 
 import javax.servlet.ServletException;
@@ -22,8 +26,18 @@ public class DepartmentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         DBHandle dbHandle = (DBHandle)session.getAttribute("dbHandle");
-        List<Teacher> teachers = new TeacherDAO(dbHandle).queryByDepartmentNo(request.getParameter("department_no"));
+
+        String department_no = request.getParameter("department_no");
+
+        List<Teacher> teachers = new TeacherDAO(dbHandle).queryByDepartmentNo(department_no);
         request.setAttribute("teachers", teachers);
+
+        List<Profession> professions = new ProfessionDAO(dbHandle).queryByDepartmentNo(department_no);
+        request.setAttribute("professions", professions);
+
+        List<Department> departments = new DepartmentDAO(dbHandle).queryByDepartmentNo(department_no);
+        request.setAttribute("department", departments.get(0));
+
         request.getRequestDispatcher("/department.jsp").forward(request, response);
     }
 
