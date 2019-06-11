@@ -29,4 +29,13 @@
         <servlet-name>TeachingCourseServlet</servlet-name>
         <url-pattern>/teaching_course</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.lyj.service.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
 </web-app>

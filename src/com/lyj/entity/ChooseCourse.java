@@ -7,13 +7,13 @@ package com.lyj.entity;
 public class ChooseCourse {
     private String stu_no;
     private String course_code;
-    private float regular_grade;
-    private float midterm_grade;
-    private float final_grade;
-    private float total_mark;
+    private Float regular_grade;
+    private Float midterm_grade;
+    private Float final_grade;
+    private Float total_mark;
     private String course_state;
-    private float retest_score;
-    private float restudy_score;
+    private Float retest_score;
+    private Float restudy_score;
 
     public String getStu_no() {
         return stu_no;

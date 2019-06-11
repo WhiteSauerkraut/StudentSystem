@@ -19,7 +19,7 @@ public class ChooseCourseDAO {
     }
 
     /**
-     * 查询指定院系的课程信息
+     * 查询指定学号的选修课程信息
      */
     public List<ChooseCourse> queryByStudentNo(Object...params)
     {

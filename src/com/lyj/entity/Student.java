@@ -22,7 +22,7 @@ public class Student {
     private String dormitory_addr;
     private String start_date;
     private String grade;
-    private String credit;
+    private Integer credit;
     private String degree;
     private String studying_state;
 
@@ -146,11 +146,11 @@ public class Student {
         this.grade = grade;
     }
 
-    public String getCredit() {
+    public Integer getCredit() {
         return credit;
     }
 
-    public void setCredit(String credit) {
+    public void setCredit(Integer credit) {
         this.credit = credit;
     }
 

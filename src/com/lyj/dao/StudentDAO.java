@@ -27,6 +27,14 @@ public class StudentDAO {
     }
 
     /**
+     * 查询指定学号的学生信息
+     */
+    public List<Student> queryByStudentNo(Object...params)
+    {
+        return dbHandle.executeQuery(SqlConstants.QUERY_TABLE_STUDENT_BY_STUDENT_NO, Student.class, params);
+    }
+
+    /**
      * 查询全部学生信息
      */
     public List<Student> queryAll(Object...params)

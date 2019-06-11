@@ -37,6 +37,7 @@ public class SqlConstants {
      */
     public static final String QUERY_TABLE_STUDENT_ALL = "SELECT * FROM students;";
     public static final String QUERY_TABLE_STUDENT_BY_DEPARTMENT_NO = "SELECT * FROM students WHERE major_department_no = ?;";
+    public static final String QUERY_TABLE_STUDENT_BY_STUDENT_NO = "SELECT * FROM students WHERE stu_no = ?;";
 
     /**
      * choose_courses
