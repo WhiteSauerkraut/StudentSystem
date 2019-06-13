@@ -27,7 +27,7 @@ public class DepartmentDAO {
     }
 
     /**
-     * 查询指定院系信息
+     * 查询指定院号的院系信息
      */
     public List<Department> queryByDepartmentNo(Object...params)
     {

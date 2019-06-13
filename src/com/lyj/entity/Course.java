@@ -15,6 +15,7 @@ public class Course {
     private String degree;
     private String specification;
     private String course_addr;
+    private String class_time;
     private String course_term;
     private String course_year;
 
@@ -96,6 +97,14 @@ public class Course {
 
     public void setCourse_addr(String course_addr) {
         this.course_addr = course_addr;
+    }
+
+    public String getClass_time() {
+        return class_time;
+    }
+
+    public void setClass_time(String class_time) {
+        this.class_time = class_time;
     }
 
     public String getCourse_term() {

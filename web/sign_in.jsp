@@ -8,38 +8,41 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="/myStyle.css">
+        <link rel="stylesheet" href="myStyle.css" charset="utf-8">
         <title>登录</title>
     </head>
     <body style="background:#f7f7f7">
-        <div class="teacher-container" style="margin: 200px auto;max-width: 600px"> 
+    <jsp:include page="nav.jsp"/>
+        <div class="teacher-container" style="margin: 100px auto;max-width: 600px;padding-bottom: 100px">
             <h1 align="center" style="margin:30px 0">登陆</h1>
             
-            <form action="">
+            <form action="/log" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">账号</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="请输入账号">
+                    <input type="text" name="account" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="请输入账号">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">密码</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+                    <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        学生
-                    </label>
-                </div>
-                    <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
-                        老师
-                    </label>
-                </div>
+                <%--<div class="form-check">--%>
+                    <%--<input class="form-check-input" type="radio" name="authority" id="exampleRadios1" value="option1" checked>--%>
+                    <%--<label class="form-check-label" for="exampleRadios1">--%>
+                        <%--学生--%>
+                    <%--</label>--%>
+                <%--</div>--%>
+                    <%--<div class="form-check">--%>
+                    <%--<input class="form-check-input" type="radio" name="authority" id="exampleRadios2" value="option2">--%>
+                    <%--<label class="form-check-label" for="exampleRadios2">--%>
+                        <%--老师--%>
+                    <%--</label>--%>
+                <%--</div>--%>
 
-                <button type="submit" class="btn btn-primary" style="margin-top:50px">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:50px;float: right">Submit</button>
             </form>
-            
+            <c:if test="${success == 'false'}">
+                <p align="center" style="color:red">账号密码错误，请重新输入账号密码</p>
+            </c:if>
         </div>
 
         <!-- Optional JavaScript -->

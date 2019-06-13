@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	  <link rel="stylesheet" href="/myStyle.css">
+	  <link rel="stylesheet" href="/myStyle.css" charset="utf-8">
     <title>欢迎来到煳腩大学</title>
   </head>
   <body>
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">主页<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/index">主页<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" id = "teachers-button">教师<span class="sr-only">(current)</span></a>
@@ -66,13 +66,27 @@
     </div>
 
     <div id = "professions">
-        <c:forEach var="profession" items="${professions}">
+        <c:forEach var="profession" items="${professions}" varStatus="s">
             <div class="card">
                 <h5 class="card-header">${profession.professions_name}</h5>
                 <div class="card-body">
                   <h5 class="card-title">学习方向</h5>
                   <p class="card-text">${profession.learn_fields}</p>
-                  <a href="#" class="btn btn-primary">专业页面</a>
+                  <p class="card-text"><b>学位等级</b>
+                      <c:if test="${profession.degree == '0'}">
+                          本科
+                      </c:if>
+                      <c:if test="${profession.degree == '1'}">
+                          硕士
+                      </c:if>
+                      <c:if test="${profession.degree == '2'}">
+                          博士
+                      </c:if>
+                      <c:if test="${profession.degree == '3'}">
+                          未限定
+                      </c:if>
+                  </p>
+                  <p class="card-text"><b>应修学分</b>${profession.need_credit}</p>
                 </div>
             </div>
         </c:forEach>
@@ -85,6 +99,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         $("#professions").hide();
+        $("#teachers-button").parent().addClass("nav-item active");
         $("#teachers-button").click(function(){
             console.log("teacher");
 

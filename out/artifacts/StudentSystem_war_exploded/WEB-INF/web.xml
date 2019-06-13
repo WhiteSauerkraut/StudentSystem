@@ -38,4 +38,49 @@
         <servlet-name>StudentServlet</servlet-name>
         <url-pattern>/student</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogServlet</servlet-name>
+        <servlet-class>com.lyj.service.LogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogServlet</servlet-name>
+        <url-pattern>/log</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChooseCourseServlet</servlet-name>
+        <servlet-class>com.lyj.service.ChooseCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChooseCourseServlet</servlet-name>
+        <url-pattern>/choose_course</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StuChooseCourseServlet</servlet-name>
+        <servlet-class>com.lyj.service.StuChooseCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuChooseCourseServlet</servlet-name>
+        <url-pattern>/choose_course_result</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StuRevisedCourseServlet</servlet-name>
+        <servlet-class>com.lyj.service.StuRevisedCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuRevisedCourseServlet</servlet-name>
+        <url-pattern>/revised_course_result</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogOutServlet</servlet-name>
+        <servlet-class>com.lyj.service.LogOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
 </web-app>

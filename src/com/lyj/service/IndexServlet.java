@@ -27,6 +27,7 @@ public class IndexServlet extends HttpServlet {
             DBHandle dbHandle = new DBHandle();
             dbHandle.openConnection(this.getServletContext().getRealPath("/config.properties"));
             session.setAttribute("dbHandle", dbHandle);
+            session.setAttribute("isLogged", null);
             System.out.println("--------------开启连接---------------");
         }
         DBHandle dbHandle = (DBHandle)session.getAttribute("dbHandle");

@@ -27,6 +27,14 @@ public class ProfessionDAO {
     }
 
     /**
+     * 查询指定专业号的专业信息
+     */
+    public List<Profession> queryByProfessionNo(Object...params)
+    {
+        return dbHandle.executeQuery(SqlConstants.QUERY_TABLE_PROFESSION_BY_PROFESSION_NO, Profession.class, params);
+    }
+
+    /**
      * 查询全部专业信息
      */
     public List<Profession> queryAll(Object...params)

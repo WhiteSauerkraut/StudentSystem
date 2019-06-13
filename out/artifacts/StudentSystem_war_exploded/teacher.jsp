@@ -8,10 +8,11 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="/myStyle.css">
+        <link rel="stylesheet" href="myStyle.css" charset="utf-8">
         <title>欢迎来到煳腩大学${department_name}</title>
     </head>
     <body style="background:#f7f7f7">
+    <jsp:include page="nav.jsp"/>
         <div class="teacher-container">
             <div class="teacher-information" style="display:flex">
                 <img src="/img/bz.png" alt="" width="200" height="200" style="margin: 20px 20px">

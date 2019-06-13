@@ -7,14 +7,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/myStyle.css">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="myStyle.css" charset="utf-8"/>
         <title>个人中心</title>
     </head>
     <body style="background:#f7f7f7">
+    <jsp:include page="nav.jsp"/>
         <div class="teacher-container">
             <div class="teacher-information" style="display:flex">
-                <img src="./img/bz.png" alt="" width="200" height="200" style="margin: 20px 20px">
+                <%--<img src="./img/bz.png" alt="" width="200" height="200" style="margin: 20px 20px">--%>
                 <div class="teacher-introduction" style="margin: 20px 20px">
                     <h1>${student.stu_name}</h1>
                     <br>
@@ -23,9 +24,9 @@
                     <p><b>家庭地址：</b>${student.family_addr}</p>
                     <p><b>宿舍地址：</b>${student.dormitory_addr}</p>
                     <p><b>学号：</b>${student.stu_no} <b>年级：</b>${student.grade}</p>
-                    <p><b>主修专业：</b>${student.major_profession_no} <b>主修学院：</b> ${student.major_department_no}</p>
-                    <p><b>辅修专业：</b>${student.minor_profession_no} <b>辅修学院：</b>${student.minor_department_no}</p>
-                    <p><b>已修学分：</b>${student.credit} <b>学位等级：</b>${student.degree}</p>
+                    <p><b>主修专业：</b>${major_profession.professions_name} <b>主修学院：</b> ${major_department.department_name}</p>
+                    <p><b>辅修专业：</b>${minor_profession.professions_name} <b>辅修学院：</b>${minor_department.department_name}</p>
+                    <p><b>已修学分：</b>${student.credit} <b>学位等级：</b>${degree}</p>
                 </div>
             </div>
         </div>
