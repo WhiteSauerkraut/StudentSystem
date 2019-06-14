@@ -83,4 +83,13 @@
         <servlet-name>LogOutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CloseServlet</servlet-name>
+        <servlet-class>com.lyj.service.CloseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CloseServlet</servlet-name>
+        <url-pattern>/close</url-pattern>
+    </servlet-mapping>
 </web-app>

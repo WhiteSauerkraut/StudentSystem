@@ -25,9 +25,6 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/index">主页<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">了解我们</a>
-            </li>
             <% if (session.getAttribute("isLogged") != null){%>
             <li class="nav-item">
                 <a class="nav-link" href="/student">个人中心</a>
@@ -39,6 +36,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="sign_in.jsp">登录</a>
                 <%}%>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/close">关闭连接</a>
             </li>
         </ul>
     </div>
